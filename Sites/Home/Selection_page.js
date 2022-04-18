@@ -98,8 +98,18 @@ search_bar.addEventListener("keypress", function(Event){
         higher_slider.value = 1
     }
     if (event.which == 13){
+        console.log(event.which)
         for (let i = 0; i < results_search.length; i++){
+            console.log(results_search[i].name)
+            console.log(search_bar.value)
+            if (search_bar.value.toLowerCase() == results_search[i].name){
+                console.log("something esle")
+            }
+            else {
+                console.log("else")
+            }
             if (search_bar.value == results_search[i].name){
+                console.log("something")
                 search_button(document.getElementById(results_search[i].id))
             }
         }
