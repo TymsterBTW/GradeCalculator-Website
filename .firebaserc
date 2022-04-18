@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "gradecalculator-web"
+  },
+  "targets": {
+    "gradecalculator-web": {
+      "hosting": {
+        "calculator": [
+          "gradecalculator-web"
+        ],
+        "signin": [
+          "signin-area"
+        ]
+      }
+    }
+  }
+}

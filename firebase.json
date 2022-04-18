@@ -1,0 +1,12 @@
+{
+  "hosting" :[
+    {
+      "target" : "calculator",
+      "public" : "site/home"
+    },
+    {
+      "target" : "signin",
+      "public" : "site/sign in"
+    }
+  ]
+}
