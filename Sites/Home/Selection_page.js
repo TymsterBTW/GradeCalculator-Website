@@ -43,6 +43,7 @@ search_bar.addEventListener("input" , () =>{
     }
 })
 function search_button(x){
+    console.log(x)
     if (x.innerHTML.toLowerCase() == "computer science"){
         higher_slider.value = 1
         higher_slider.setAttribute("max" , 1)
