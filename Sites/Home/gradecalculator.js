@@ -29,6 +29,8 @@ const margin_percentage = {
     "Computer ScienceHigherTest 1" : [10, 21.25,32.5,43.75,53.75,63.75,73.75,80,87.5],
     "Computer ScienceHigherTest 2" : [11.25,22.5,33.75,46.25,53.75,61.25,68.75,76.25,85],
 }
+console.log("im in")
+
 const percentage_sidebar = document.getElementById('sidebar-percentage')
 function grade_cal(){
     const subject = document.getElementById('subject-sidebar')
@@ -43,6 +45,8 @@ function grade_cal(){
     const searchbar = document.getElementById('selection-search')
     const checks = margin_percentage[subjectHF12]
     if (percentage_sidebar.innerHTML == "0" || checks == undefined){
+        console.log(percentage_sidebar.innerHTML)
+        console.log(checks)
         error.classList.remove("page-hidden")
         result_text.classList.add("page-hidden")
         if (percentage_sidebar.innerHTML == "0" || percentage_sidebar.innerHTML == "Infinity" || parseInt(percentage_sidebar.innerHTML) > 100){

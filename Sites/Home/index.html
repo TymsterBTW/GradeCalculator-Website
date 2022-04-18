@@ -1,100 +1,238 @@
 <html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel = "icon" type = "image/png" href = "gradecal.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Roboto+Mono&display=swap" rel="stylesheet">
-        <title>GradeCalculator</title>
-        <link rel="stylesheet" href="style.css">
-        <body style="background-color: #A5CCD1;margin: 0px;">
-            <div class="grid-container">
-                <div class="header">
-                    <img src="gradecal.png" alt="Logo" class="logo">
-                    <header class="title"> <b>Grade Calculator</b></header>
-                </div>
-                <div class="sidebar">
-                    <button class="sidebar-buttons disabled sidebar-buttons-disabled" id="home-button" style="border-top: 2px black solid;" >Home</button>
-                    <button class="sidebar-buttons disabled sidebar-buttons-disabled" id="percentage-button">Percentages</button>
-                    <button class="sidebar-buttons disabled sidebar-buttons-disabled" id="selection-button">Selections</button>
-                    <button class="sidebar-buttons disabled sidebar-buttons-disabled" id="result-button" onclick="grade_cal()">Results</button>
-                    <p class="sidebar-text">Percentage: <span id="sidebar-percentage">0</span>%</p> <br>
-                    <p class="sidebar-text">Subject: <span id="subject-sidebar">None</span></p>
-                    <p class="sidebar-text" id="higher-foundation">Higher</p>
-                    <p class="sidebar-text" id="Test1-Test2">Test 1</p>
-                </div>
-                <div class="page home" id="home">
-                    <div class="home-text-container">
-                        <header class="home-text"><u>Home</u></header>
-                        <p class="home-text" style="text-align: left;">This is a grade calculor for GCSE AQA exams, mock or end of terms exams and these are based of the 2019 AQA GCES grade <a href="https://filestore.aqa.org.uk/over/stat_pdf/AQA-GCSE-GDE-BDY-JUN-2019.PDF" target="_blank">boudaries</a></p>
-                    </div>
-                </div>
-                <div class="page-hidden page percentages" id="percentages">
-                    <div class="percentage-input-container" id="enter-score-total">
-                        <span>Your Score:</span><input type="number" class="percentages-input" id="percentage-score"> <br>
-                        <span>Total Score:</span><input type="number" class="percentages-input" id="percentage-total"> <br>
-                        <p>Percentage: <span id="percentage-output">0</span>%</p>
-                        <p id="percentage-error"></p>
-                        <button id="Percentage-enter" class="percentage-enter">Enter Percentage</button>
-                    </div>
-                    <div class="page-hidden enter-percentage" id="percentage-pures">
-                        <div class="percentage-input-container">
-                            <span>Percentage:</span><input type="number" class="percentages-input" id="percentage-pure-input"> <span class="percentage-input-sign">%</span> <br>
-                            <p id="perc-error"></p>
-                            <button class="percentage-enter" id="button-show-per-pure">Enter Score and total</button>
-                        </div>
-                    </div>
-                </div>
-                <div class=" page selection page-hidden" id="selection">
-                    <div class="selection-container">
-                        <div class="selection-left">
-                            <div>
-                            </div><input type="text" class="selection-search" id="selection-search" placeholder="Search Subject..."> 
-                            <br>
-                            <p id="search-error" style="display: none;">Sorry no results found <br> try checking your spelling</p>
-                            <p id="selection-error" style="display: none;">With this subject only Higher may be selected</p>
-                            <button class="search-subject page-hidden" id="math" onclick="search_button(this)">Math</button>
-                            <button class="search-subject page-hidden" id="englishLi" onclick="search_button(this)">English Literature</button>
-                            <button class="search-subject page-hidden" id="EnglishLa" onclick="search_button(this)">English Language</button>
-                            <button class="search-subject page-hidden" id="Chemistry" onclick="search_button(this)">Chemistry</button>
-                            <button class="search-subject page-hidden" id="Biology" onclick="search_button(this)">Biology</button>
-                            <button class="search-subject page-hidden" id="Physics" onclick="search_button(this)">Physics</button>
-                            <button class="search-subject page-hidden" id="computer science" onclick="search_button(this)">Computer Science</button> <br>
-
-                        </div>
-                        <div class="selection-right">
-                            <div class="HF">
-                                <span>Higher</span> <input type="range" min="1" max="2" value="1" class="slider" id="HF"><span>Foundation</span>
-                            </div>
-                            <div class="T12">
-                                <span>Test 1</span><input type="range" min="1" max="2" value="1" class="slider" id="Test12"><span>Test 2</span>
-     
-                            </div>
-    
-                        </div>
-
-                    </div>
-                    </div>
-                <div class="page-hidden page results" id="results">
-                    <div class="results-text" id="result-text">
-                        <h1 id="pass.fail"></h1>
-                         <h3>Number Grade: <span id="grade"></span></h3>
-                        <h3>Letter Grade: <span id="letter_grade"></span></h3>
-                        <p>Any grade equal to or above 4 is a pass in any subject</p>
-                        <p style="display: none;" id="foundation-cap">You have selected foundation and those grades are capped at 5</p>
-                    </div>
-                    <p id="error" style="color: red;" class="page-hidden">You have not entered all of the necessary inputs please go through them again to make sure you havent missed anything</p>
-                </div>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="gradecal.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>GradeCalculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <body style="background-color: #a5ccd1; margin: 0px">
+      <div class="grid-container">
+        <div class="header">
+          <img src="gradecal.png" alt="Logo" class="logo" />
+          <header class="title">
+            <b class="act-title">Grade Calculator</b>
+          </header>
+        </div>
+        <div class="sidebar">
+          <button
+            class="sidebar-buttons disabled sidebar-buttons-disabled"
+            id="home-button"
+            style="border-top: 2px black solid"
+          >
+            Home
+          </button>
+          <button
+            class="sidebar-buttons disabled sidebar-buttons-disabled"
+            id="percentage-button"
+          >
+            Percentages
+          </button>
+          <button
+            class="sidebar-buttons disabled sidebar-buttons-disabled"
+            id="selection-button"
+          >
+            Selections
+          </button>
+          <button
+            class="sidebar-buttons disabled sidebar-buttons-disabled"
+            id="result-button"
+            onclick="grade_cal()"
+          >
+            Results
+          </button>
+          <p class="sidebar-text">
+            Percentage: <span id="sidebar-percentage">0</span>%
+          </p>
+          <br />
+          <p class="sidebar-text">
+            Subject: <span id="subject-sidebar">None</span>
+          </p>
+          <p class="sidebar-text" id="higher-foundation">Higher</p>
+          <p class="sidebar-text" id="Test1-Test2">Test 1</p>
+        </div>
+        <div class="page home" id="home">
+          <div class="home-text-container">
+            <header class="home-text"><u>Home</u></header>
+            <p class="home-text" style="text-align: left">
+              This is a grade calculor for GCSE AQA exams, mock or end of terms
+              exams and these are based of the 2019 AQA GCES grade
+              <a
+                href="https://filestore.aqa.org.uk/over/stat_pdf/AQA-GCSE-GDE-BDY-JUN-2019.PDF"
+                target="_blank"
+                >boudaries</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="page-hidden page percentages" id="percentages">
+          <div class="percentage-input-container" id="enter-score-total">
+            <span>Your Score:</span
+            ><input
+              type="number"
+              class="percentages-input"
+              id="percentage-score"
+            />
+            <br />
+            <span>Total Score:</span
+            ><input
+              type="number"
+              class="percentages-input"
+              id="percentage-total"
+            />
+            <br />
+            <p>Percentage: <span id="percentage-output">0</span>%</p>
+            <p id="percentage-error"></p>
+            <button id="Percentage-enter" class="percentage-enter">
+              Enter Percentage
+            </button>
+          </div>
+          <div class="page-hidden enter-percentage" id="percentage-pures">
+            <div class="percentage-input-container">
+              <span>Percentage:</span
+              ><input
+                type="number"
+                class="percentages-input"
+                id="percentage-pure-input"
+              />
+              <span class="percentage-input-sign">%</span> <br />
+              <p id="perc-error"></p>
+              <button class="percentage-enter" id="button-show-per-pure">
+                Enter Score and total
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="page selection page-hidden" id="selection">
+          <div class="selection-container">
+            <div class="selection-left">
+              <div></div>
+              <input
+                type="text"
+                class="selection-search"
+                id="selection-search"
+                placeholder="Search Subject..."
+              />
+              <br />
+              <p id="search-error" style="display: none">
+                Sorry no results found <br />
+                try checking your spelling
+              </p>
+              <p id="selection-error" style="display: none">
+                With this subject only Higher may be selected
+              </p>
+              <button
+                class="search-subject page-hidden"
+                id="math"
+                onclick="search_button(this)"
+              >
+                Math
+              </button>
+              <button
+                class="search-subject page-hidden"
+                id="englishLi"
+                onclick="search_button(this)"
+              >
+                English Literature
+              </button>
+              <button
+                class="search-subject page-hidden"
+                id="EnglishLa"
+                onclick="search_button(this)"
+              >
+                English Language
+              </button>
+              <button
+                class="search-subject page-hidden"
+                id="Chemistry"
+                onclick="search_button(this)"
+              >
+                Chemistry
+              </button>
+              <button
+                class="search-subject page-hidden"
+                id="Biology"
+                onclick="search_button(this)"
+              >
+                Biology
+              </button>
+              <button
+                class="search-subject page-hidden"
+                id="Physics"
+                onclick="search_button(this)"
+              >
+                Physics
+              </button>
+              <button
+                class="search-subject page-hidden"
+                id="computer science"
+                onclick="search_button(this)"
+              >
+                Computer Science
+              </button>
+              <br />
+            </div>
+            <div class="selection-right">
+              <div class="HF">
+                <span>Higher</span>
+                <input
+                  type="range"
+                  min="1"
+                  max="2"
+                  value="1"
+                  class="slider"
+                  id="HF"
+                /><span>Foundation</span>
               </div>
-        </body>
-        <script src="script.js"></script>
-        <script src="Selection_page.js"></script>
-        <script src="gradecalculator.js"></script>
-    </head>
+              <div class="T12">
+                <span>Test 1</span
+                ><input
+                  type="range"
+                  min="1"
+                  max="2"
+                  value="1"
+                  class="slider"
+                  id="Test12"
+                /><span>Test 2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-hidden page results" id="results">
+          <div class="results-text" id="result-text">
+            <h1 id="pass.fail"></h1>
+            <h3>Number Grade: <span id="grade"></span></h3>
+            <h3>Letter Grade: <span id="letter_grade"></span></h3>
+            <p>Any grade equal to or above 4 is a pass in any subject</p>
+            <p style="display: none" id="foundation-cap">
+              You have selected foundation and those grades are capped at 5
+            </p>
+          </div>
+          <p id="error" style="color: red" class="page-hidden">
+            You have not entered all of the necessary inputs please go through
+            them again to make sure you havent missed anything
+          </p>
+        </div>
+      </div>
+    </body>
+    <script src="script.js"></script>
+    <script src="Selection_page.js"></script>
+    <script src="gradecalculator.js"></script>
+  </head>
 </html>
