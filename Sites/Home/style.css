@@ -12,13 +12,17 @@
   }
   
 .header {
-
+    padding: 10px;
     font-family: 'Roboto Mono', monospace;
     grid-column-start: 1;
     grid-column-end: 8;
     background-color: #bee0ee;
     box-shadow: 0 10px 5px black ;
   }
+.act-title{
+    position: absolute;
+    bottom: 85%;
+}
 .logo{
     width: auto;
     height: 100%;

@@ -2,11 +2,11 @@
   "hosting" :[
     {
       "target" : "calculator",
-      "public" : "site/home"
+      "public" : "Sites/home"
     },
     {
-      "target" : "signin",
-      "public" : "site/sign in"
+      "target": "signin",
+      "public": "Sites/sign in"
     }
   ]
 }
