@@ -8,15 +8,24 @@
       </div>
       <div class="main-background">
         <div class="main">
-          <h2 class="main-title"> <u><b>Percentages</b></u></h2>
-          <input type="number" id="percentage-score"> <br>
-          <input type="number" id="percentage-total">
-          <button>Ps</button>
+          <div class="percentage-score-total-container">
+            <h2 class="main-title"> <u><b>Percentages</b></u></h2>
+            <input type="number" id="percentage-score" class="percentage-input" placeholder="Enter your score"> <br>
+            <input type="number" id="percentage-total" class="percentage-input" placeholder="Enter the total"> <br>
+            <button class="Percentage-button">Enter Percentage</button>
+          </div>
+          <div class="percentage-input-container">
+            <input type="number" id="percentage-input" class="percentage-input" placeholder="Enter your percentage"> <span>%</span> <br>
+            <button class="Percentage-button">Enter Score and total</button>
+          </div>
+          <hr class="page-break">
           <h2 class="main-title"><u><b>Subject</b></u></h2>
           <input type="text">
+          <hr class="page-break">
           <h2 class="main-title"><u><b>Options</b></u></h2>
           <input type="range"> <br>
           <input type="range"> <br>
+          <hr class="page-break">
           <button>Submit</button>
         </div>
       </div>
