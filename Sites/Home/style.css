@@ -28,6 +28,7 @@ body{
     height: auto;
 }
 .percentage-input{
+    font-size: 20px;
     width: 25%;
     height: 4%;
     margin-top: 10px;
@@ -50,18 +51,74 @@ body{
     width: 30%;
 }
 .percentage-change{
-    height: 5%;
-    width: 29%;
+    font-size: 20px;
+    height: 4%;
+    width: 30%;
     background-color: whitesmoke;
     outline: none;
     border: none;
-    border: 1px black solid;
     transition: all .4s;
     margin-top: 10px;
 }
 .percentage-change:hover{
-    background-color: #d3d3d3;
-    width: 30%;
-    height: 5.5%;
+    width: 31%;
+    height: 4.6%;
+    border: 1px black solid;
 
+}
+.subject-container{
+   width: 35%;
+}
+.subject-search{
+    background-color: transparent;
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px black solid;
+}
+.subject-list{
+    font-size: 20px;
+    height: 3%;
+    outline: none;
+    width: 100%;
+    transition: all .4s;
+    background-color: transparent;
+    border: none;
+    background-color: #d3d3d3;
+}
+.subject-list:hover{
+    background-color: transparent;
+    height: 4%;
+    border: 1px black solid;
+}
+.options-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    border-radius: 30px;
+    height: 30px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+.options-slider {
+    margin-top: 20px;
+    -webkit-appearance: none;
+    width: 40%;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+.options-slider:hover{
+    opacity: 1;
+}
+.submit{
+    width: 9%;
+    transition: all .4s;
+}
+.submit:hover{
+    color: blue;
 }
