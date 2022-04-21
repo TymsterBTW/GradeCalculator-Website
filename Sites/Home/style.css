@@ -10,7 +10,7 @@
     display: none;
 }
 body{
-    background-image: url(background\ 2.jpg);
+    background-image: url(BackgroundImage.jpg);
     background-size: cover;
 }
 .background-main{
@@ -36,25 +36,32 @@ body{
     background-color: transparent;
     border-bottom: 1px black solid;
     transition: all .4s;
+    position: relative;
+}
+.error{
+    color: red;
+}
+.percentage-sign{
+    position: absolute;
+    margin-left: -15px;
+    margin-top: 20px;
 }
 .percentage-input:hover{
     width: 30%;
 }
 .percentage-change{
     height: 5%;
-    width: 25%;
+    width: 29%;
     background-color: whitesmoke;
     outline: none;
     border: none;
     border: 1px black solid;
     transition: all .4s;
+    margin-top: 10px;
 }
 .percentage-change:hover{
     background-color: #d3d3d3;
-    width: 26%;
+    width: 30%;
     height: 5.5%;
 
-}
-.percentage-change:active{
-    transform: translateY(-10%);
 }

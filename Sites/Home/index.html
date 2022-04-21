@@ -21,6 +21,7 @@
             class="percentage-input"
             id="percentage-score"
             placeholder="Enter your score"
+            max="100"
           />
           <br />
           <input
@@ -29,10 +30,6 @@
             id="percentage-total"
             placeholder="Enter your score"
           />
-          <p>Percentage: <span id="percentage-output"></span>%</p>
-          <button class="percentage-change" id="percentage-change">
-            Press to enter percentage
-          </button>
         </div>
         <div id="percentage-input" class="hidden">
           <input
@@ -41,7 +38,15 @@
             id="percentage-pure"
             placeholder="Enter your percentage"
           />
+          <span class="percentage-sign">%</span>
         </div>
+        <p>Percentage: <span id="percentage-output"></span>%</p>
+        <button class="percentage-change" id="percentage-change">
+          Press to enter percentage
+        </button>
+        <p class="error hidden" id="percentage-error">
+          Your score cannot be higher than the total
+        </p>
         <br />
       </div>
     </body>
