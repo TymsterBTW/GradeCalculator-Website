@@ -1,33 +1,41 @@
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="gradecal.png" />
     <title>Grade Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <body >
+    <link rel="stylesheet" href="style.css" />
+    <body style="margin: 0px">
       <div class="header">
         <h1>Grade Calculator</h1>
       </div>
-      <div class="main-background">
-        <div class="main">
-          <div class="percentage-score-total-container">
-            <h2 class="main-title"> <u><b>Percentages</b></u></h2>
-            <input type="number" id="percentage-score" class="percentage-input" placeholder="Enter your score"> <br>
-            <input type="number" id="percentage-total" class="percentage-input" placeholder="Enter the total"> <br>
-            <button class="Percentage-button">Enter Percentage</button>
-          </div>
-          <div class="percentage-input-container">
-            <input type="number" id="percentage-input" class="percentage-input" placeholder="Enter your percentage"> <span>%</span> <br>
-            <button class="Percentage-button">Enter Score and total</button>
-          </div>
-          <hr class="page-break">
-          <h2 class="main-title"><u><b>Subject</b></u></h2>
-          <input type="text">
-          <hr class="page-break">
-          <h2 class="main-title"><u><b>Options</b></u></h2>
-          <input type="range"> <br>
-          <input type="range"> <br>
-          <hr class="page-break">
-          <button>Submit</button>
-        </div>
+      <div class="main">
+        <h2>Percentages</h2>
+        <input
+          type="number"
+          class="percentage-input"
+          id="percentage-score"
+          placeholder="Enter your score"
+        />
+        <br />
+        <input
+          type="number"
+          class="percentage-input"
+          id="percentage-total"
+          placeholder="Enter your score"
+        />
+        <br />
+        <input
+          type="number"
+          class="percentage-input"
+          id="percentage-pure"
+          placeholder="Enter your percentage"
+        />
+        <br />
       </div>
     </body>
     <script src="script.js"></script>

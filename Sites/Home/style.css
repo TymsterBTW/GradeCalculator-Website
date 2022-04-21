@@ -1,58 +1,32 @@
-body{
-    background-image: url(background-image.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0px;
-}
-.hidden{
-    display: none;
-}
 .header{
-    position: sticky;
-    color: black;
-    text-align: center;
+    width: 100%;
+    height: 20%;
     font-size: 50px;
-    width: 100%;
-    height: 12%;
-    background-color: #B8DBD9;
     text-align: center;
-    box-shadow: 0px 10px 30px #586F7C;
+    background-color: rgb(255, 255, 255, 0.8);
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
-.main-background{
-    margin-top: 0px;
+body{
+    background-image: url(background\ 2.jpg);
+    background-size: cover;
+}
+.background-main{
     width: 100%;
-    height: max-content;
-    background-color: rgb(244, 244, 249 , 0.3);
-    padding-top: 50px;
+    text-align: center;
 }
 .main{
-    box-shadow: 10px 0px 15px #B8DBD9 , -10px 0px 15px #B8DBD9;
-    font-size: 20px;
-    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     margin: auto;
-    margin-top: 0px;
-    background-color: #586F7C;
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255, 0.8);
     width: 50%;
-}
-.page-break{
-    color: black;
-    background-color: black;
-}
-.main-title{
-    font-size: 35px;
+    height: auto;
 }
 .percentage-input{
-    font-size: 16px;
-    margin-top: 20px;
-    outline: none;
+    margin-top: 10px;
+    border-radius: 25px;
     border: none;
-    width: 25%;
-    height: 25px;
-    background-color: #B8DBD9;
-    padding: 10px;
-}
-.percentage-input::placeholder{
-    color: black;
+    outline: none;
 }
