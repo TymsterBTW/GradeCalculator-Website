@@ -15,26 +15,33 @@
       </div>
       <div class="main">
         <h2>Percentages</h2>
-        <input
-          type="number"
-          class="percentage-input"
-          id="percentage-score"
-          placeholder="Enter your score"
-        />
-        <br />
-        <input
-          type="number"
-          class="percentage-input"
-          id="percentage-total"
-          placeholder="Enter your score"
-        />
-        <br />
-        <input
-          type="number"
-          class="percentage-input"
-          id="percentage-pure"
-          placeholder="Enter your percentage"
-        />
+        <div id="percentage-score-total">
+          <input
+            type="number"
+            class="percentage-input"
+            id="percentage-score"
+            placeholder="Enter your score"
+          />
+          <br />
+          <input
+            type="number"
+            class="percentage-input"
+            id="percentage-total"
+            placeholder="Enter your score"
+          />
+          <p>Percentage: <span id="percentage-output"></span>%</p>
+          <button class="percentage-change" id="percentage-change">
+            Press to enter percentage
+          </button>
+        </div>
+        <div id="percentage-input" class="hidden">
+          <input
+            type="number"
+            class="percentage-input"
+            id="percentage-pure"
+            placeholder="Enter your percentage"
+          />
+        </div>
         <br />
       </div>
     </body>

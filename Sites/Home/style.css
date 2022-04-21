@@ -6,6 +6,9 @@
     background-color: rgb(255, 255, 255, 0.8);
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
+.hidden{
+    display: none;
+}
 body{
     background-image: url(background\ 2.jpg);
     background-size: cover;
@@ -25,8 +28,33 @@ body{
     height: auto;
 }
 .percentage-input{
+    width: 25%;
+    height: 4%;
     margin-top: 10px;
-    border-radius: 25px;
     border: none;
     outline: none;
+    background-color: transparent;
+    border-bottom: 1px black solid;
+    transition: all .4s;
+}
+.percentage-input:hover{
+    width: 30%;
+}
+.percentage-change{
+    height: 5%;
+    width: 25%;
+    background-color: whitesmoke;
+    outline: none;
+    border: none;
+    border: 1px black solid;
+    transition: all .4s;
+}
+.percentage-change:hover{
+    background-color: #d3d3d3;
+    width: 26%;
+    height: 5.5%;
+
+}
+.percentage-change:active{
+    transform: translateY(-10%);
 }
