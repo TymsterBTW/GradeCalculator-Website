@@ -9,6 +9,24 @@
 .hidden{
     display: none;
 }
+.header-button-container{
+    margin-top: -130px;
+    margin-right: 20px;
+}
+.subject-button{
+    width: 7%;
+    border: none;
+    outline: none;
+    height: 20%;
+    margin-right: 20px;
+    transition: all .4s;
+    float: right;
+}
+.subject-button:hover{
+    width: 8%;
+    height: 21%;
+    border: 1px black solid;
+}
 body{
     background-image: url(BackgroundImage.jpg);
     background-size: cover;
@@ -125,5 +143,6 @@ body{
     color: blue;
 }
 .main2{
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
 }

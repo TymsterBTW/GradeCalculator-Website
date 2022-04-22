@@ -162,19 +162,6 @@ function subject_addition(){
     let subjectHF12 = SubjectHF + options_Test12_range.value
     return subjectHF12
 }
-getLocation()
-function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-     console.log("no");
-    }
-  }
-  
-  function showPosition(position) {
-      console.log(position.coords.longitude)
-      console.log(position.coords.latitude)
-  }
 function calculator(){
     var grade = 0
     let parameter = percentage_margins[subject_addition()]
