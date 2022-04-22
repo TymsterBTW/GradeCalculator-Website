@@ -26,6 +26,9 @@ const return_button = document.getElementById('return')
 const grade_result = document.getElementById('grade-result')
 const pass_fail = document.getElementById('pass.fail')
 const foundation_result = document.getElementById('foundation')
+const login_page = document.getElementById('login-page')
+const login_button = document.getElementById('sign-in')
+const sign_up_page = document.getElementById('sign-up-page')
 //percenage formulas
 var percentage_result = 0
 var button_change = 1
@@ -106,6 +109,7 @@ subject_search.addEventListener("keydown" , (event) =>{
     }
 })
 function subject_pressed(x){
+    subject_search.value = ""
     subject_higher_checks(x)
     for (let i = 0; i < subject_list_array.length; i++){
         document.getElementById(subject_list_array[i].id).classList.add("hidden")
@@ -132,7 +136,6 @@ function subject_higher_checks(x){
     }
 }
 //calculator{
-var foundation = false
 function checks(){
     let error_count = 0
     if(percentage_result > 100 || percentage_result == 0){
@@ -162,15 +165,16 @@ function subject_addition(){
     let subjectHF12 = SubjectHF + options_Test12_range.value
     return subjectHF12
 }
+var foundation_check = true
 function calculator(){
     var grade = 0
     let parameter = percentage_margins[subject_addition()]
     let max = parameter.length
     if (max == 5){
-        foundation = true
+        foundation_check = true
     }
     else {
-        foundation = false
+        foundation_check = false
     }
     for (let i = 0; i < max; i++){
         if (percentage_result > parameter[max - 1]){
@@ -197,16 +201,20 @@ function output(x){
         pass_fail.innerHTML = "Fail"
         pass_fail.style.color = "red"
     }
-    if (foundation == true){
-        foundation_result.style.display = "none"
+    if (foundation_check == true){
+        foundation_result.style.display = "block"
     }
     else {
-        foundation_result.style.display = "block"
+        foundation_result.style.display = "none"
     }
 }
 function return_button_pressed(){
     main1.classList.remove("hidden")
     main2.classList.add("hidden")
+    sign_up_page.classList.add("hidden")
+    login_page.classList.add("hidden")
+    return_hide_sign_in_up()
+
 }
 const percentage_margins = {
     /*maths*/
@@ -240,3 +248,15 @@ const percentage_margins = {
     "computer science01" : [11.25,22.5,33.75,46.25,53.75,61.25,68.75,76.25,85],
 
   }
+function sign_in_page_function(){
+    login_page.classList.remove("hidden")
+    sign_up_page.classList.add("hidden")
+    main1.classList.add("hidden")
+    main2.classList.add("hidden")
+}
+function sign_up_page_function(){
+    sign_up_page.classList.remove("hidden")
+    login_page.classList.add("hidden")
+    main1.classList.add("hidden")
+    main2.classList.add("hidden")
+}
