@@ -14,7 +14,7 @@
         <h1 style="transform: translatey(25%);">Grade Calculator</h1>
       </div>
       <div class="main">
-        <div class="main-">
+        <div class="main1" id="main1">
               <h2>Percentages</h2>
         <div id="percentage-score-total">
           <input
@@ -73,8 +73,12 @@
         <p id="percentage-score-error" class="error hidden"><a href="#percentage-score" style="color: red;">Percentage-Score</a></p>
         <p id="subject-error" class="error hidden"><a href="#subject-search" style="color: red;">Subject</a></p>
         </div>
-        <div class="main.">
-
+        <div class="main2 hidden" id="main2">
+          <p class="text">Grade: <span id="grade-result"></span></p>
+          <p id="pass.fail"></p>
+          <p>Any grade over 4 is a pass</p>
+          <p id="foundation" class="hidden">You choose foundation meaning your grade is capped at 5</p>
+          <button class="percentage-change" id="return" onclick="return_button_pressed()">Return</button>
         </div>
       </div>
     </body>
