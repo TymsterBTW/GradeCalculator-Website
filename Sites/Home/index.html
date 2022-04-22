@@ -17,15 +17,13 @@
         <div class="header-button-container">
           <button
             class="subject-button"
-            id="sign-in"
-            onclick="sign_in_page_function()"
+            id="Login"
           >
             Log in
           </button>
           <button
             class="subject-button"
             id="sign-up"
-            onclick="sign_up_page_function()"
           >
             Sign up
           </button>
@@ -195,99 +193,48 @@
             Return
           </button>
         </div>
-
-        <div class="hidden" id="login-page">
-          <h2>Sign in</h2>
-          <div id="sign-in-inputs">
-            <input
-              type="text"
-              class="percentage-input"
-              placeholder="Enter your email"
-              id="sign-in-mail"
-            />
-            <br />
-            <input
-              id="sign-in-password"
-              type="password"
-              class="percentage-input"
-              placeholder="Enter your password"
-            />
-            <br />
+        <div>
+          <div id="Login-Page" class="hidden"> 
+            <h1>Login</h1>
+            <form id="LoginForm">
+              <input type="text" id="Login-Mail" class="percentage-input" placeholder="Enter Email"> <br>
+              <input type="password" id="Login-Password" class="percentage-input" placeholder="Enter Password"> <br>
+              <button type="submit" class="percentage-change">Submit</button>
+            </form>
+            <p class="error" id="LoginError"></p>
+            <p style="color: green; font-size: 25px;" id="Login-Sucess" class="hidden">Successfull Login!</p>
             <button
-              class="percentage-change"
-              id="sign-in-submit"
-              onclick="sign_in_submit()"
-            >
-              Submit
-            </button>
-            <br />
-          </div>
-          <button
             class="percentage-change"
             id="return"
             onclick="return_button_pressed()"
           >
             Return
           </button>
-          <p style="color: green" id="succesful-login" class="hidden">
-            Succesfull Login!
-          </p>
-          <p class="error hidden" id="sign-in-mail-error">
-            Incorrect mail or password
-          </p>
-        </div>
-
-        <div class="hidden" id="sign-up-page">
-          <h2>Sign Up</h2>
-          <div id="sign-up-content">
-            <input
-              type="text"
-              class="percentage-input"
-              placeholder="Enter your email"
-              id="sign-up-mail"
-            />
-            <br />
-            <input
-              id="sign-up-password"
-              type="password"
-              class="percentage-input"
-              placeholder="Enter your password"
-            />
-            <br />
-            <input
-              id="sign-up-password-repeat"
-              type="password"
-              class="percentage-input"
-              placeholder="Repeat your password"
-            />
-            <p class="error hidden" id="password-match-error">
-              Passwords do not match
-            </p>
-            <p class="error hidden" id="mail-invalid-sign-up">Invalid email</p>
-            <br />
-            <button
-              class="percentage-change"
-              id="sign-up-submit"
-              onclick="sign_up_submit()"
-            >
-              Submit
-            </button>
           </div>
-          <p style="color: green" id="sign-up-success" class="hidden">
-            Sign up Success!
-          </p>
-          <br />
-          <button
+          <div id="SignUp-Page" class="hidden">
+            <h1>Sign Up</h1>
+            <form id="SignUpForm">
+              <input type="text" id="SignUp-Mail" class="percentage-input" placeholder="Enter Email"> <br>
+              <input type="password" id="SignUp-Password" class="percentage-input" placeholder="Enter Password"> <br>
+              <input type="password" id="SignUp-Password-Repeat" class="percentage-input" placeholder="Repeat Password"> <br>
+              <button type="submit" class="percentage-change">Submit</button>
+            </form>
+            <p class="error" id="SignUpError"></p>
+            <p style="color: green; font-size: 25px;" id="SignUp-Sucess" class="hidden">Successfull Sign Up!</p>
+            <p class="error hidden" id="sign-up-password-check">Passwords need to be the same</p>
+            <button
             class="percentage-change"
             id="return"
             onclick="return_button_pressed()"
           >
             Return
           </button>
+          </div>
+
         </div>
-      </div>
     </body>
     <script src="script.js"></script>
-    <script src="Login.js"></script>
+    <script src="Login.js" type="module"></script>
+    </script>
   </head>
 </html>

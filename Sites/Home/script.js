@@ -55,8 +55,6 @@ percentage_change.addEventListener("click", () =>{
         percentage_input.classList.add("hidden")
     }
 })
-
-
 function percentage(){
     if (button_change == 1){
         percentage_output.innerHTML = (percentage_score.value / percentage_total.value * 100).toFixed(2)
@@ -194,6 +192,7 @@ function output(x){
     main2.classList.remove("hidden")
     grade_result.innerHTML = x
     if (x >= 4){
+        
         pass_fail.innerHTML = "Pass"
         pass_fail.style.color = "Green"
     }
@@ -211,10 +210,8 @@ function output(x){
 function return_button_pressed(){
     main1.classList.remove("hidden")
     main2.classList.add("hidden")
-    sign_up_page.classList.add("hidden")
-    login_page.classList.add("hidden")
-    return_hide_sign_in_up()
-
+    document.getElementById('Login-Page').classList.add("hidden")
+    document.getElementById('SignUp-Page').classList.add("hidden")
 }
 const percentage_margins = {
     /*maths*/
