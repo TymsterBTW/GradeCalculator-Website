@@ -69,6 +69,12 @@ function percentage(){
     else{
         percentage_error.classList.add("hidden")
     }
+    if  (percentage_result == 69.00){
+        document.getElementById('69').classList.remove("hidden")
+    }
+    else {
+        document.getElementById('69').classList.add("hidden")
+    }
 }
 //subject formulas
 var subject = "None"
@@ -163,6 +169,9 @@ function calculator(){
     if (max == 5){
         foundation = true
     }
+    else {
+        foundation = false
+    }
     for (let i = 0; i < max; i++){
         if (percentage_result > parameter[max - 1]){
             grade = max
@@ -180,7 +189,7 @@ function output(x){
     main1.classList.add("hidden")
     main2.classList.remove("hidden")
     grade_result.innerHTML = x
-    if (x > 4){
+    if (x >= 4){
         pass_fail.innerHTML = "Pass"
         pass_fail.style.color = "Green"
     }
@@ -188,11 +197,12 @@ function output(x){
         pass_fail.innerHTML = "Fail"
         pass_fail.style.color = "red"
     }
-    if (foundation = true){
-        foundation_result.classList.remove("hidden")
+    console.log(foundation)
+    if (foundation == true){
+        foundation_result.style.display = "none"
     }
     else {
-        foundation_result.classList.add("hidden")
+        foundation_result.style.display = "block"
     }
 }
 function return_button_pressed(){

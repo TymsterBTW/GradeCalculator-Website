@@ -7,78 +7,175 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" type="image/x-icon" href="gradecal.png" />
-    <title style="vertical-align: middle; display: inline-block;">Grade Calculator</title>
+    <title style="vertical-align: middle; display: inline-block">
+      Grade Calculator
+    </title>
     <link rel="stylesheet" href="style.css" />
     <body style="margin: 0px">
       <div class="header">
-        <h1 style="transform: translatey(25%);">Grade Calculator</h1>
+        <h1 style="transform: translatey(25%)">Grade Calculator</h1>
       </div>
       <div class="main">
         <div class="main1" id="main1">
-              <h2>Percentages</h2>
-        <div id="percentage-score-total">
-          <input
-            type="number"
-            class="percentage-input"
-            id="percentage-score"
-            placeholder="Enter your score"
-            max="100"
-          />
+          <h2>Percentages</h2>
+          <div id="percentage-score-total">
+            <input
+              type="number"
+              class="percentage-input"
+              id="percentage-score"
+              placeholder="Enter your score"
+              max="100"
+              min="1"
+            />
+            <br />
+            <input
+              type="number"
+              class="percentage-input"
+              id="percentage-total"
+              placeholder="Enter your score"
+            />
+          </div>
+          <div id="percentage-input" class="hidden">
+            <input
+              type="number"
+              class="percentage-input"
+              id="percentage-pure"
+              placeholder="Enter your percentage"
+            />
+            <span class="percentage-sign">%</span>
+          </div>
+          <p style="font-size: 20px">
+            Percentage: <span id="percentage-output"></span>%
+          </p>
+          <button class="percentage-change" id="percentage-change">
+            Press to enter percentage
+          </button>
+          <p class="error hidden" id="percentage-error">
+            Your score cannot be higher than the total
+          </p>
+          <p class="hidden" id="69">69 NICE</p>
           <br />
-          <input
-            type="number"
-            class="percentage-input"
-            id="percentage-total"
-            placeholder="Enter your score"
+          <hr />
+          <h2>Subject</h2>
+          <div class="subject-container">
+            <input
+              type="text"
+              id="subject-search"
+              class="subject-search"
+              placeholder="Search For Subject..."
+            />
+            <br />
+            <button
+              class="subject-list hidden"
+              name="computer science"
+              id="computer science"
+              onclick="subject_pressed(this)"
+            >
+              Computer Science
+            </button>
+            <button
+              class="subject-list hidden"
+              name="biology"
+              id="biology"
+              onclick="subject_pressed(this)"
+            >
+              Biology
+            </button>
+            <button
+              class="subject-list hidden"
+              name="chemistry"
+              id="chemistry"
+              onclick="subject_pressed(this)"
+            >
+              Chemistry
+            </button>
+            <button
+              class="subject-list hidden"
+              name="physics"
+              id="physics"
+              onclick="subject_pressed(this)"
+            >
+              Physics
+            </button>
+            <button
+              class="subject-list hidden"
+              name="math"
+              id="math"
+              onclick="subject_pressed(this)"
+            >
+              Math
+            </button>
+            <button
+              class="subject-list hidden"
+              name="english literature"
+              id="english literature"
+              onclick="subject_pressed(this)"
+            >
+              English Literature
+            </button>
+            <button
+              class="subject-list hidden"
+              name="english language"
+              id="english language"
+              onclick="subject_pressed(this)"
+            >
+              English Language
+            </button>
+          </div>
+          <p style="font-size: 20px">
+            Selected: <span id="subject-output">None</span>
+          </p>
+          <hr />
+          <h2>Options</h2>
+          <p class="error hidden" id="options-error">
+            With this subject only higher may be selected
+          </p>
+          <span>Higher</span
+          ><input
+            type="range"
+            min="0"
+            max="1"
+            id="Higher-Foundation"
+            class="options-slider"
+            value="0"
           />
-        </div>
-        <div id="percentage-input" class="hidden">
-          <input
-            type="number"
-            class="percentage-input"
-            id="percentage-pure"
-            placeholder="Enter your percentage"
+          <span>Foundation</span> <br />
+          <span>Test 1</span
+          ><input
+            type="range"
+            min="0"
+            max="1"
+            id="Test1-2"
+            class="options-slider"
+            value="0"
           />
-          <span class="percentage-sign">%</span>
-        </div>
-        <p style="font-size: 20px;">Percentage: <span id="percentage-output"></span>%</p>
-        <button class="percentage-change" id="percentage-change">
-          Press to enter percentage
-        </button>
-        <p class="error hidden" id="percentage-error">
-          Your score cannot be higher than the total
-        </p>
-        <br />
-        <hr>
-        <h2>Subject</h2>
-        <div class="subject-container">
-          <input type="text" id="subject-search" class="subject-search" placeholder="Search For Subject..."> <br>
-          <button class="subject-list hidden" name="computer science" id="computer science" onclick="subject_pressed(this)">Computer Science</button>
-          <button class="subject-list hidden" name="biology" id="biology" onclick="subject_pressed(this)">Biology</button>
-          <button class="subject-list hidden" name="chemistry" id="chemistry" onclick="subject_pressed(this)">Chemistry</button>
-          <button class="subject-list hidden" name="physics" id="physics" onclick="subject_pressed(this)">Physics</button>
-          <button class="subject-list hidden" name="math" id="math" onclick="subject_pressed(this)">Math</button>
-          <button class="subject-list hidden" name="english literature" id="english literature" onclick="subject_pressed(this)">English Literature</button>
-          <button class="subject-list hidden" name="english language" id="english language" onclick="subject_pressed(this)">English Language</button>
-        </div>
-        <p style="font-size: 20px;">Selected: <span id="subject-output">None</span></p>
-        <hr>
-        <H2>Options</H2>
-        <p class="error hidden" id="options-error">With this subject only higher may be selected</p>
-        <span>Higher</span><input type="range" min="0" max="1" id="Higher-Foundation" class="options-slider" value="0"> <span>Foundation</span> <br>
-        <span>Test 1</span><input type="range" min="0" max="1" id="Test1-2" class="options-slider" value="0"> <span>Test 2</span>
-        <hr>
-        <h2 class="submit" onclick="checks()">Submit</h2>
-        <p class="error hidden">Error <span id="error-count"></span> invalid inputs</p>
-        <p id="percentage-score-error" class="error hidden"><a href="#percentage-score" style="color: red;">Percentage-Score</a></p>
-        <p id="subject-error" class="error hidden"><a href="#subject-search" style="color: red;">Subject</a></p>
+          <span>Test 2</span>
+          <hr />
+          <h2 class="submit" onclick="checks()">Submit</h2>
+          <p class="error hidden">
+            Error <span id="error-count"></span> invalid inputs
+          </p>
+          <p id="percentage-score-error" class="error hidden">
+            <a href="#percentage-score" style="color: red">Percentage-Score</a>
+          </p>
+          <p id="subject-error" class="error hidden">
+            <a href="#subject-search" style="color: red">Subject</a>
+          </p>
         </div>
         <div class="main2 hidden" id="main2">
           <p class="text">Grade: <span id="grade-result"></span></p>
           <p id="pass.fail"></p>
           <p>Any grade over 4 is a pass</p>
-          <p id="foundation" class="hidden">You choose foundation meaning your grade is capped at 5</p>
-          <button class="percentage-change" id="return" onclick="return_button_pressed()">Return</button>
+          <p id="foundation" class="hidden">
+            You choose foundation meaning your grade is capped at 5
+          </p>
+          <button
+            class="percentage-change"
+            id="return"
+            onclick="return_button_pressed()"
+          >
+            Return
+          </button>
         </div>
       </div>
     </body>
