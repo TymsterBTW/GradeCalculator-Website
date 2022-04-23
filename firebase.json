@@ -3,10 +3,6 @@
     {
       "target" : "calculator",
       "public" : "Sites/home"
-    },
-    {
-      "target" : "signin",
-      "public" : "Sites/Sign in"
     }
   ]
 }

@@ -188,6 +188,7 @@ function calculator(){
     }
 }
 function output(x){
+    error_count_item.style.display = "none"
     main1.classList.add("hidden")
     main2.classList.remove("hidden")
     grade_result.innerHTML = x

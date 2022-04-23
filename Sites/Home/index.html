@@ -13,20 +13,17 @@
     <link rel="stylesheet" href="style.css" />
     <body style="margin: 0px">
       <div class="header">
-        <h1 class="title">Grade Calculator</h1>
-        <div class="header-button-container">
-          <button
-            class="subject-button"
-            id="Login"
-          >
-            Log in
-          </button>
-          <button
-            class="subject-button"
-            id="sign-up"
-          >
-            Sign up
-          </button>
+        <div class="sub-header">
+          <div class="logo-container">
+            <h1 style="font-weight: 50;">Grade<span style="font-weight: 1000;">Calculator</span></h1>
+          </div>
+          <div class="Navigation">
+            <button class="Navigation-button" id="Login">Log In</button>
+            <button class="Navigation-button" id="sign-up">Sign Up</button>
+            <button class="Navigation-button hidden" id="Log-Out">Log Out</button>
+            <button class="Navigation-button hidden" id="profile-button">Profile</button>
+            <p id="Header-Message" class="hidden" style="color: green; font-size: 20px;">Succesfull Logged Out!</p>
+          </div>
         </div>
       </div>
       <div class="main">
@@ -201,6 +198,9 @@
               <input type="password" id="Login-Password" class="percentage-input" placeholder="Enter Password"> <br>
               <button type="submit" class="percentage-change">Submit</button>
             </form>
+            <p id="password-reset" class="error hidden">Forgot Password: <a href="">Reset</a></p>
+            <p id="password-reset-confirm" class="hidden" style="color:green;">Password Reset Sent</p>
+            <p class="error hidden" id="password-reset-error"></p>
             <p class="error" id="LoginError"></p>
             <p style="color: green; font-size: 25px;" id="Login-Sucess" class="hidden">Successfull Login!</p>
             <button
@@ -230,7 +230,15 @@
             Return
           </button>
           </div>
-
+          <div id="profile-page" class="hidden">
+            <p>Email: <span id="profile-page-email"></span></p>
+            <p>Creation Date: <span id="profile-page-creation-date"></span></p>
+            <p>Username: <span id="profile-page-username">None</span><button id="username-change" class="profile-button">Change Username</button></p>
+            <div id="new-username" class="hidden">
+              <input type="text" class="percentage-input" placeholder="Enter New Username" id="New-username-input"> <button id="username-change-submit" class="profile-button">Submit</button>
+              <p class="error" id="new-username-error"></p>
+            </div>
+          </div>
         </div>
     </body>
     <script src="script.js"></script>

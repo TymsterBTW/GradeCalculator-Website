@@ -7,9 +7,6 @@
       "hosting": {
         "calculator": [
           "gradecalculator-web"
-        ],
-        "signin": [
-          "signin-area"
         ]
       }
     }
