@@ -31,7 +31,6 @@
 }
 .logo-container{
     height: 100%;
-    display: table;
     float: left;
     font-size: 45px;
 }
